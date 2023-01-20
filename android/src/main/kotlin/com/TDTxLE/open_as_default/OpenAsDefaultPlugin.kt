@@ -43,6 +43,8 @@ class OpenAsDefaultPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
   override fun onAttachedToActivity(binding: ActivityPluginBinding) {
     //binding.addOnNewIntentListener(this)
 
+    fileIntentUri = null
+
     val parameters = binding.activity.intent.extras
     if (parameters != null) fileIntentUri = parameters.getString("uri", "")
 
